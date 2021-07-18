@@ -1,7 +1,6 @@
 import pytest
 from elasticsearch import ElasticsearchException
 from mapiko_elasticsearch import search_template as st
-# import mapiko_elasticsearch
 
 
 class TestSearchTemplate:
