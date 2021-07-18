@@ -6,9 +6,15 @@ class SearchTemplate:
         self.path_script = path_script
 
     def put(self) -> None:
+        with open('tests/_scripts/test_script.json') as f:
+            body = f.read()
+
         es = elasticsearch.Elasticsearch()
         try:
-            response = es.client.put_script()
+            response = es.put_script(
+                id='test_script',
+                body=body
+            )
         except elasticsearch.ElasticsearchException as e:
             raise e
 
